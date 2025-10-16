@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile Card</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <article id="test-user-profile-card">
-        <img src="Aaron.jpg" alt="" id="test-user-profile-picture">
+    <article id="test-user-profile-card" data-testid="test-profile-card">
+        <!-- Main profile picture -->
+        <img src="Aaron.jpg" alt="Profile Picture" id="test-user-profile-picture" data-testid="test-user-avatar">
 
-    <h2 id="test-user-name">Aaron Ojo</h2>
-    <p id="test-user-bio">I am a passionate frontend developer</p>
+        <h2 id="test-user-name" data-testid="test-user-name">Aaron Ojo</h2>
+        <p id="test-user-bio" data-testid="test-user-bio">I am an 18 year old frontend developer that gives attention to details and build beautiful and functional interfaces</p>
 
-    <div id="time-container">
-    <span>Current Time (ms): </span>
-    <span id="test-user-time" ></span>
-</div>
-
-    <figure id="avatar-section">
-        <img src="anafnaa" id="test-user-avatar" alt="">
-
-        <div id="upload-simple">
-            <input type="file" name="" id="file-upload" accept="image/*">
+        <div id="time-container">
+            <span>Current Time (ms): </span>
+            <span id="test-user-time" data-testid="test-user-time"></span>
         </div>
-    </figure>
 
-    <nav id="test-user-social-links">Social Media Handles
-        <ul>
-        <li><a href="" id="test-user-social-network" target="_blank">LinkedIN</a></li>
-        <li><a href="" id="test-user-social-network" target="_blank">X</a></li>
-        <li><a href="" id="test-user-social-network" target="_blank">Githib</a></li>  
-        </ul>
+        <!-- Avatar upload section -->
+        <figure id="avatar-section">
+            <img src="default-avatar.jpg" id="test-user-avatar" alt="Upload Avatar" data-testid="test-user-avatar-upload">
+            
+            <div id="upload-simple">
+                <input type="file" name="" id="file-upload" accept="image/*">
+            </div>
+        </figure>
 
-    </nav>
+        <!-- Social links -->
+        <nav id="test-user-social-links" data-testid="test-user-social-links">
+            Social Media Handles
+            <ul>
+                <li><a href="https://linkedin.com" class="social-link" data-testid="test-user-social-linkedin" target="_blank">LinkedIN</a></li>
+                <li><a href="https://twitter.com" class="social-link" data-testid="test-user-social-twitter" target="_blank">X</a></li>
+                <li><a href="https://github.com" class="social-link" data-testid="test-user-social-github" target="_blank">Github</a></li>  
+            </ul>
+        </nav>
 
-    <section>
-           <ul id="test-user-hobbies">Hobbies
-        <li>Gaming</li>
-        <li>MUsic</li>
-        <li>Football</li>
-           </ul>
+        <!-- Hobbies and Dislikes -->
+        <section>
+            <ul id="test-user-hobbies" data-testid="test-user-hobbies">
+                Hobbies
+                <li>Gaming</li>
+                <li>Music</li>
+                <li>Football</li>
+            </ul>
 
-    <ul id="test-user-dislikes">Dislikes
-        <li>Movies</li>
-        <li>Pap</li>
-    </ul>
-    </section>
+            <ul id="test-user-dislikes" data-testid="test-user-dislikes">
+                Dislikes
+                <li>NIL</li>
+            </ul>
+        </section>
     </article>
 
     <script src="script.js"></script>
