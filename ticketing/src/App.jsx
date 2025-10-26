@@ -7,15 +7,17 @@ import Ticketmanagement from "./pages/Ticketmanagement";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/Ticketmanagement" element={<Ticketmanagement />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="max-h-[1440px]">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/Ticketmanagement" element={<Ticketmanagement />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
