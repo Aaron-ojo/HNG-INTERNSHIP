@@ -7,15 +7,23 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold">TicketFlow</div>
-          <Link
-            to="/ticketmanagement"
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-          >
-            Ticket
-          </Link>
-          <Link to="/" className="bg-blue-500 text-white px-4 py-2 rounded">
-            Home
-          </Link>
+          <div className="flex space-x-2">
+            <Link to="/" className="bg-blue-500 text-white px-4 py-2 rounded">
+              Home
+            </Link>
+            <Link
+              to="/ticketmanagement"
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
+              Ticket
+            </Link>
+            <Link
+              to="/dashboard"
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
+              Dashboard
+            </Link>
+          </div>
         </div>
       </div>
     </header>
