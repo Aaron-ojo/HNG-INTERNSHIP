@@ -10,7 +10,6 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold">TicketFlow</div>
 
-          {/* Desktop Menu - hidden on mobile */}
           <div className="hidden md:flex space-x-4">
             <Link
               to="/"
@@ -32,16 +31,14 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden bg-blue-500 text-white px-3 py-2 rounded"
+            className="md:hidden bg-purple-200 text-white px-3 py-2 rounded"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             ☰
           </button>
         </div>
 
-        {/* Mobile Menu - shown when hamburger is clicked */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-2">
             <Link
