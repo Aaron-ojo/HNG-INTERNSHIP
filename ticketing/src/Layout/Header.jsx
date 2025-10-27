@@ -18,12 +18,6 @@ const Header = () => {
               Home
             </Link>
             <Link
-              to="/ticketmanagement"
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-            >
-              Ticket
-            </Link>
-            <Link
               to="/dashboard"
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
             >
@@ -32,7 +26,7 @@ const Header = () => {
           </div>
 
           <button
-            className="md:hidden bg-purple-200 text-white px-3 py-2 rounded"
+            className="md:hidden bg-purple-400 text-white px-3 py-2 rounded"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             ☰
@@ -47,13 +41,6 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link
-              to="/ticketmanagement"
-              className="block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Ticket
             </Link>
             <Link
               to="/dashboard"

@@ -2,8 +2,18 @@ import React from "react";
 import { useEffect } from "react";
 import Footer from "../Layout/Footer";
 import Header from "../Layout/Header";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
+  const tickets = JSON.parse(localStorage.getItem("ticketapp_tickets") || "[]");
+  const totalTickets = tickets.length;
+  const openTickets = tickets.filter(
+    (ticket) => ticket.status === "open"
+  ).length;
+  const resolvedTickets = tickets.filter(
+    (ticket) => ticket.status === "closed"
+  ).length;
+
   useEffect(() => {
     const token = localStorage.getItem("ticketapp_session");
     if (!token) {
@@ -23,30 +33,35 @@ const Dashboard = () => {
               <h3 className="text-lg font-semibold text-gray-700 mb-2">
                 Total Tickets
               </h3>
-              <p className="text-3xl font-bold text-blue-600">0</p>
+              <p className="text-3xl font-bold text-blue-600">{totalTickets}</p>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 flex-1">
               <h3 className="text-lg font-semibold text-gray-700 mb-2">
                 Open Tickets
               </h3>
-              <p className="text-3xl font-bold text-green-600">0</p>
+              <p className="text-3xl font-bold text-green-600">{openTickets}</p>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 flex-1">
               <h3 className="text-lg font-semibold text-gray-700 mb-2">
                 Resolved Tickets
               </h3>
-              <p className="text-3xl font-bold text-gray-600">0</p>
+              <p className="text-3xl font-bold text-gray-600">
+                {resolvedTickets}
+              </p>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h3 className="text-lg font-semibold text-gray-700 mb-4">
               Quick Actions
             </h3>
-            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+            <Link
+              to="/ticketmanagement"
+              className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
+            >
               Go to Ticket Management
-            </button>
+            </Link>
           </div>
 
           <div className="bg-white rounded-lg shadow-md p-6">

@@ -24,19 +24,21 @@ const TicketManagement = () => {
       errors.status = "select a status";
     }
 
-    return errors; // Added missing return
+    return errors;
   }
 
   function handleCreateTicket() {
-    const errors = validateForm(); // Fixed function name
+    const errors = validateForm();
 
     if (Object.keys(errors).length === 0) {
       const ticket = {
-        id: Date.now(), // Added ()
+        id: Date.now(),
         ...newTicket,
-        createdAt: new Date().toISOString(), // Added ()
+        createdAt: new Date().toISOString(),
       };
-      setTickets([...tickets, ticket]);
+      const updatedTickets = [...tickets, ticket];
+      setTickets(updatedTickets);
+      localStorage.setItem("ticketapp_tickets", JSON.stringify(updatedTickets));
 
       setNewTicket({
         title: "",
@@ -50,27 +52,30 @@ const TicketManagement = () => {
     }
   }
 
-  const handleDeleteTicket = (ticketId) => {
-    if (window.confirm("Are you sure you want to delete this ticket?")) {
-      setTickets(tickets.filter((ticket) => ticket.id !== ticketId));
-    }
-  };
-
   const handleUpdateTicket = () => {
-    setTickets(
-      tickets.map((ticket) =>
-        ticket.id === editingTicket.id ? editingTicket : ticket
-      )
+    const updatedTickets = tickets.map((ticket) =>
+      ticket.id === editingTicket.id ? editingTicket : ticket
     );
+
+    setTickets(updatedTickets);
+    localStorage.setItem("ticketapp_tickets", JSON.stringify(updatedTickets));
     setEditingTicket(null);
   };
 
-  useEffect(() => {
-    const token = localStorage.getItem("ticketapp_session");
-    if (!token) {
-      window.location.href = "/login";
+  const handleDeleteTicket = (ticketId) => {
+    if (window.confirm("Are you sure you want to delete this ticket?")) {
+      const updatedTickets = tickets.filter((ticket) => ticket.id !== ticketId);
+      setTickets(updatedTickets);
+      localStorage.setItem("ticketapp_tickets", JSON.stringify(updatedTickets));
     }
-  }, []);
+  };
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem("ticketapp_session");
+  //   if (!token) {
+  //     window.location.href = "/login";
+  //   }
+  // }, []);
 
   return (
     <div>
@@ -247,7 +252,6 @@ const TicketManagement = () => {
             </div>
           )}
 
-          {/* Tickets List */}
           <div className="space-y-4 mt-8">
             <h2 className="text-2xl font-bold mb-4">
               All Tickets ({tickets.length})
