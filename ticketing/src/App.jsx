@@ -10,11 +10,11 @@ function App() {
     <div className="max-h-[1440px]">
       <HashRouter>
         <Routes>
-          <Route path="/#/" element={<LandingPage />} />
-          <Route path="/#/login" element={<Login />} />
-          <Route path="/#/dashboard" element={<Dashboard />} />
-          <Route path="/#/signup" element={<Signup />} />
-          <Route path="/#/ticketmanagement" element={<Ticketmanagement />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/ticketmanagement" element={<Ticketmanagement />} />
         </Routes>
       </HashRouter>
     </div>

@@ -17,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem("ticketapp_session");
     if (!token) {
-      window.location.href = "/#/login";
+      window.location.href = "/login";
     }
   }, []);
 
@@ -57,7 +57,7 @@ const Dashboard = () => {
               Quick Actions
             </h3>
             <Link
-              to="/#/ticketmanagement"
+              to="/ticketmanagement"
               className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
             >
               Go to Ticket Management
@@ -72,7 +72,7 @@ const Dashboard = () => {
               className="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition"
               onClick={() => {
                 localStorage.removeItem("ticketapp_session");
-                window.location.href = "/#/login";
+                window.location.href = "/login";
               }}
             >
               Log Out

@@ -12,13 +12,13 @@ const Header = () => {
 
           <div className="hidden md:flex space-x-4">
             <Link
-              to="/#/"
+              to="/"
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
             >
               Home
             </Link>
             <Link
-              to="/#/dashboard"
+              to="/dashboard"
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
             >
               Dashboard
@@ -36,14 +36,14 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-2">
             <Link
-              to="/#/"
+              to="/"
               className="block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              to="/#/dashboard"
+              to="/dashboard"
               className="block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
               onClick={() => setIsMenuOpen(false)}
             >
