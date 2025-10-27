@@ -45,7 +45,7 @@ const Signup = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       localStorage.setItem("ticketapp_session", "mock-jwt-token-12345");
-      window.location.href = "/dashboard";
+      window.location.href = "/#/dashboard";
     } else {
       setErrors(validationErrors);
     }
