@@ -34,7 +34,7 @@ const Login = () => {
         formData.Password === "password"
       ) {
         localStorage.setItem("ticketapp_session", "mock-jwt-token-12345");
-        window.location.href = "/dashboard";
+        window.location.href = "/#/dashboard";
       } else {
         setErrors({ general: "Invalid email or password" });
       }

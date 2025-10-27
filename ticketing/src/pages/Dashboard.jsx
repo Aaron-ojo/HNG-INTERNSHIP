@@ -17,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem("ticketapp_session");
     if (!token) {
-      window.location.href = "/login";
+      window.location.href = "/#/login";
     }
   }, []);
 
